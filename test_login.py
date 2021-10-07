@@ -17,7 +17,7 @@ def setup():
     yield driver
     driver.close()
 
-def test_login_success(setup): #testcase 001
+def test_login_success(setup):
     setup.find_element_by_name('email').send_keys(Prereq.mail)
     setup.find_element_by_name('password').send_keys(Prereq.password)
     setup.find_element_by_xpath('/html/body/div[3]/div/form/button').click()
@@ -30,7 +30,7 @@ Accounts = [(Prereq.mail,'wrong password'),
             ('wrongemail@mail.com','wrong password')]
 
 @pytest.mark.parametrize('email,password', Accounts)
-def test_login_unsuccess(setup,email,password): #testcase 002,003,004
+def test_login_unsuccess(setup,email,password):
     setup.find_element_by_name('email').send_keys(email)
     setup.find_element_by_name('password').send_keys(password)
     setup.find_element_by_xpath('/html/body/div[3]/div/form/button').click()
