@@ -10,7 +10,7 @@ class Prereq:
 
 @pytest.fixture
 def setup():
-    driver = webdriver.Chrome(executable_path='/Users/dindatiwi/Downloads/chromedriver')
+    driver = webdriver.Chrome()
     driver.get('https://pandu.kominfo.go.id/login')
     driver.implicitly_wait(5)
     # driver.minimize_window()
